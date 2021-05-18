@@ -21,20 +21,52 @@ class Calculator {
     }
 
     chooseOperation(operation) {
-
+        if (this.currentOperand === '') return
+        if (this.previousOperand !== '') {
+            this.compute()
+        }
+        this.operation = operation
+        this.previousOperand = this.currentOperand
+        this.currentOperand = ''
     }
 
     calculate() {
+        let calculation
+        const prev = parseFloat(this.previousOperand)
+        const current = parseFloat(this.currentOperand)
 
+        if (isNaN(prev) || isNaN(current)) return
+
+        switch (this.operation) {
+            case '+':
+                calculation = prev + current
+                break
+            case '-':
+                calculation = prev - current
+                break
+            case '*':
+                calculation = prev * current
+                break
+            case '/':
+                calculation = prev / current
+                break
+            default:
+              return
+        }
+
+        this.currentOperand = calculation
+        this.operation = undefined
+        this.previousOperand = ''
     }
 
     updateDisplay() {
         this.currentOperandText.innerText = this.currentOperand
+        this.previousOperandText.innerText = this.previousOperand
     }
 }
 
 const numberButtons = document.querySelectorAll('[data-number]')
-const operationButtons = document.querySelectorAll('[data-operations]')
+const operationButtons = document.querySelectorAll('[data-operation]')
 const equalsButton = document.querySelector('[data-equals]')
 const deleteButton = document.querySelector('[data-delete]')
 const allClearButton = document.querySelector('[data-all-clear]')
@@ -50,3 +82,14 @@ numberButtons.forEach(button => {
     })
 })
 
+operationButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        calculator.chooseOperation(button.innerText)
+        calculator.updateDisplay()
+    })
+})
+
+equalsButton.addEventListener('click', () => {
+    calculator.calculate()
+    calculator.updateDisplay()
+})
