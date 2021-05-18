@@ -14,10 +14,10 @@ body {
 .calc-grid {
     display: grid;
     justify-content: center;
-    align-items: center;
+    align-content: center;
     min-height: 100vh;
-    grid-template-columns: repeat(4, 8rem);
-    grid-template-rows: minmax(8.2rem, auto) repeat(5, 8rem);
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
 .calc-grid > button {
@@ -30,5 +30,8 @@ body {
 .calc-grid > button:hover {
     background-color: rgba(255, 255, 255, 0.9);
 }
-    
+
+.span-2 {
+    grid-column: span 2;
+}
     
