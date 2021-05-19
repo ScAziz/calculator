@@ -48,6 +48,7 @@ class Calculator {
                 calculation = prev * current
                 break
             case '/':
+                current === 0 
                 calculation = prev / current
                 break
             default:
@@ -65,8 +66,10 @@ class Calculator {
         const decimalNumbers = stringNumber.split('.')[1]
         let integerDisplay
 
-        if(isNaN(integerNumbers)) {
+        if(isNaN(integerNumbers) && integerNumbers !== Infinity) {
             integerDisplay = ''
+        } else if(integerNumbers === Infinity) {
+                integerDisplay = `no dividing by zero!`
         } else {
             integerDisplay = integerNumbers.toLocaleString('en', {
                 maximumFractionDigits: 0
