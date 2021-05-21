@@ -20,6 +20,15 @@ body {
     min-height: 100vh;
     grid-template-columns: repeat(4, 100px);
     grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+    button {
+        font-size: 2rem;
+        border: 1px solid white;
+        outline: none;
+        background-color: (255, 255, 255, 0.75);
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
 }
 
 .span-2 {
@@ -35,5 +44,13 @@ body {
     padding: 1rem;
     word-wrap: break-word;
     word-break: break-all;
-    background-color: rgb(226, 209, 195, 0.25);
+    background-color: rgba(226, 209, 195, 0.25);
+    .previous-operand {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 1.5rem;
+    }
+    .current-operand {
+        color: $primaryTextColor;
+        font-size: 2.5rem;
+    }
 }

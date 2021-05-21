@@ -27,7 +27,48 @@ body {
       grid-template-rows: minmax(120px, auto) repeat(5, 100px);
 }
 
+.calc-grid button {
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+  background-color: 255, 255, 255, 0.75;
+}
+
+.calc-grid button:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+}
+
 .span-2 {
   grid-column: span 2;
+}
+
+.output {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  grid-column: 1 / -1;
+  padding: 1rem;
+  word-wrap: break-word;
+  word-break: break-all;
+  background-color: rgba(226, 209, 195, 0.25);
+}
+
+.output .previous-operand {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 1.5rem;
+}
+
+.output .current-operand {
+  color: white;
+  font-size: 2.5rem;
 }
 /*# sourceMappingURL=style.css.map */
