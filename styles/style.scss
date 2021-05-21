@@ -49,7 +49,7 @@ body {
     word-break: break-all;
     background-color: rgba(226, 209, 195, 0.25);
     .previous-operand {
-        color: rgba(255, 255, 255, 0.75);
+        color: $primaryTextColor;
         font-size: 1.5rem;
     }
     .current-operand {
