@@ -136,5 +136,24 @@ deleteButton.addEventListener('click', () => {
 })
 
 document.addEventListener('keydown', (event) => {
-    console.log(event.key)
+    if (event.key >= 0 && event.key <= 9 || event.key === '.') {
+        calculator.appendNumber(event.key)
+        calculator.updateDisplay()
+    }
+    if (event.key === '/' || event.key === '*' || event.key === '+' || event.key === '-') {
+        calculator.chooseOperation(event.key)
+        calculator.updateDisplay()
+    }
+    if (event.key === '=') {
+        calculator.calculate()
+        calculator.updateDisplay()
+    }
+    if (event.key === 'Backspace') {
+        calculator.delete()
+        calculator.updateDisplay()
+    }
+    if (event.key === 'Escape') {
+        calculator.clear()
+        calculator.updateDisplay()
+    }
 })
