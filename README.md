@@ -1,4 +1,4 @@
-#Calculator
+Calculator
 ---
 A straightforward calculator, built to test my JavaScript skills. Also my first time using SCSS!
 
